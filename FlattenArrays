@@ -1,0 +1,15 @@
+#Python code that will flatten an array
+
+arrayOfArrays = [[1,2,[3]],4,5]
+
+def flattenArray(array):
+    flatArray = []
+    for element in array:
+        if type(element) is int:
+            flatArray.append(element)
+        else:
+            flatArray += flattenArray(element)
+    return flatArray
+    
+    
+print flattenArray(arrayOfArrays)
